@@ -36,7 +36,7 @@ public class BookEntity extends BaseEntity {
             inverseJoinColumns = @JoinColumn(name = "fk_book_id", referencedColumnName = "id", nullable = false))
     private List<AuthorEntity> authorList;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_publisher_id")
     private PublisherEntity publisher;
 }
